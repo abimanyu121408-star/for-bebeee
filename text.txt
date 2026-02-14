@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Film For Bebe ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+background:black;
+color:white;
+font-family:'Poppins', sans-serif;
+overflow-x:hidden;
+}
+
+/* Intro */
+.intro{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.intro h1{
+font-family:'Playfair Display', serif;
+font-size:2.5rem;
+letter-spacing:2px;
+opacity:0;
+animation:fadeIn 4s ease forwards;
+}
+
+@keyframes fadeIn{
+to{opacity:1;}
+}
+
+/* Sections */
+.section{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+opacity:0;
+transform:translateY(40px);
+transition:1.5s ease;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.highlight{
+color:#ff6b81;
+}
+
+.countdown{
+margin-top:25px;
+font-size:1.2rem;
+line-height:1.6;
+}
+
+footer{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px;
+}
+
+button{
+margin-top:30px;
+padding:12px 30px;
+border:none;
+border-radius:30px;
+background:#ff6b81;
+color:white;
+cursor:pointer;
+font-size:1rem;
+}
+
+button:hover{
+background:#ff3f61;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="intro">
+<h1>
+A Love Story<br>
+Between Indonesia & The Netherlands
+</h1>
+</div>
+
+<!-- STORY -->
+<div class="section">
+<h2>Hi Bebe ❤️</h2>
+
+<p style="margin-top:25px; max-width:600px;">
+It started in the most unexpected way.
+Just two people talking, not knowing that a simple conversation
+would slowly turn into something we didn’t plan — but needed.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+Somewhere between random jokes, late night calls,
+and those small “have you eaten?” messages,
+you became my favorite part of the day.
+Not loud. Not dramatic.
+Just real.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+And now here we are.
+Indonesia and the Netherlands.
+Different skies. Different time zones.
+But somehow, the same feeling.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+Distance is hard.
+I won’t lie.
+There are days when I just want to see you,
+not through a screen,
+but right in front of me.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+But if loving you means waiting,
+then I’ll wait.
+Because what we have is worth it.
+</p>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="section">
+<h2>Until We Meet Again</h2>
+<div class="countdown" id="countdown"></div>
+<p style="margin-top:15px;">May 1st, 2026 ✈️</p>
+</div>
+
+<!-- LETTER -->
+<div class="section">
+<h2>A Letter For You</h2>
+
+<p style="margin-top:25px; max-width:600px;">
+Bebe,
+I don’t think you realize how much you mean to me.
+You didn’t just enter my life.
+You changed the way my days feel.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+You’re the calm after my overthinking.
+The smile I don’t force.
+The comfort I didn’t know I needed.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+I love the way you care,
+even when you pretend you don’t.
+I love how you stay,
+even when distance makes things complicated.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+I’m not perfect.
+We’re not perfect.
+But what we have feels honest.
+And that’s what makes it beautiful.
+</p>
+</div>
+
+<!-- FINAL SCENE -->
+<footer>
+<h2 class="highlight">Final Scene</h2>
+
+<p style="margin-top:25px; max-width:600px;">
+When I finally see you at the airport,
+I don’t think I’ll say much at first.
+I’ll probably just look at you
+and realize that every second of waiting
+was worth it.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+I imagine that first hug.
+The one that lasts a little longer
+because we both know
+how long it took to get there.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+No more countdown.
+No more “goodnight” through a screen.
+Just us.
+Finally in the same place.
+</p>
+
+<p style="margin-top:15px; max-width:600px;">
+Until that day comes,
+I’m still here.
+Still choosing you.
+Every single day.
+</p>
+
+<p style="margin-top:30px;">
+Directed by: Abi<br>
+Starring: Bebe ❤️
+</p>
+</footer>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+<source src="sampai-jadi-debu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+/* Scroll Reveal */
+const sections=document.querySelectorAll(".section");
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
+
+/* Countdown */
+const targetDate = new Date("May 1, 2026 00:00:00").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const distance=targetDate-now;
+
+const days=Math.floor(distance/(1000*60*60*24));
+const hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+const minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+const seconds=Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("countdown").innerHTML =
+days+" Days "+hours+" Hours "+minutes+" Minutes "+seconds+" Seconds";
+},1000);
+</script>
+
+</body>
+</html>
